@@ -1,7 +1,8 @@
 
+## 개발 환경 설정
+
 1. wsl2 설치
-제어판 > 프로그램 > 프로그램 및 기능 > Windows 기능 켜기 또는 끄기
-재부팅
+제어판 > 프로그램 > 프로그램 및 기능 > Windows 기능 켜기 또는 끄기 > 리부팅
 wsl --install ubuntu-22.04		# 우분투 설치 후 계정 생성
 wsl -l -v		# 배포판 확인
 wsl		# 디폴트 콘솔 진입
@@ -10,6 +11,8 @@ wsl --terminate ubuntu-22.04		# 종료
 wsl --unregister ubuntu-22.04		# 배포판 삭제
 
 2. git 설치
+github 계정 생성
+wsl > 우분투 로그인
 mkdir work
 cd work
 git config --global user.name '깃이름'
@@ -17,9 +20,9 @@ git config --global user.email '깃이메일'
 git config --global --list
 
 3. ssh키 설정
-ssh-keygen		# ssh 키 생성
+ssh-keygen		# ssh 키 생성, 엔터3번으로 디폴트로 실행
 cat ~/.ssh/id_rsa.pub		# ssh 퍼블릭키 복사
-github > Settings > SSH and GPG keys > New SSH key > 키 등록
+github > Settings > SSH and GPG keys > New SSH key > 퍼블릭키 등록
 
 4. git 복사 및 연습 pull & push
 git clone git@github.com:weable-kosa/kosa-ict-genai-2025-2nd.git		# yes
@@ -31,6 +34,8 @@ git push
 5. vscode 연동
 sudo apt-get update
 sudo apt-get install python3 python3-pip -y
-윈도우에서 vscode 설치 > 실행 > 플러그인 설치: wsl
-code .		# 우분투에서 vscode 실행 vscode 설치 > 실행 > 플러그인 설치: python, jupyter
-.ipynb 파일 생성 후, python 실행 환경 설정: /usr/bin/python3
+윈도우에서 vscode 설치 > 실행 > 플러그인 설치(wsl)
+code .		# wsl실행 후 작업폴더로 이동하여 vscode 실행
+wsl에서 실행한 vscode의 플러그인 설치(python, jupyter)
+.ipynb 파일 생성 후, python 실행 환경 설정(/usr/bin/python3)
+
